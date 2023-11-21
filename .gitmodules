@@ -1,6 +1,6 @@
 [submodule "front"]
-    path = front
-    url = https://github.com/ippei-shimizu/rails-api-nextjs-verification-app-front
+	path = front
+	url = https://github.com/ippei-shimizu/rails-api-nextjs-verification-app-front
 [submodule "back"]
-    path = back
-    url = https://github.com/ippei-shimizu/rails-api-nextjs-verification-app-back
+	path = back
+	url = https://github.com/ippei-shimizu/rails-api-nextjs-verification-app-back
