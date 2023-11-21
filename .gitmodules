@@ -1,0 +1,6 @@
+[submodule "front"]
+    path = front
+    url = git@github.com:ippei-shimizu/rails-api-nextjs-verification-app-front.git
+[submodule "back"]
+    path = front
+    url = git@github.com:ippei-shimizu/rails-api-nextjs-verification-app-front.git
