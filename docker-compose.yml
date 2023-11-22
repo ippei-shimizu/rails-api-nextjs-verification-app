@@ -13,6 +13,7 @@ services:
   back:
     build:
       context: ./back
+      dockerfile: Dockerfile
     command: bash -c "tail -f log/development.log"
     volumes:
       - ./back:/app
@@ -24,10 +25,12 @@ services:
     stdin_open: true
   front:
     build:
-      context: ./front
+      context: ./front/
+      dockerfile: Dockerfile
     volumes:
       - ./front:/app
+    command: yarn dev -p 4000
     ports:
-      - "8002:3001"
+      - "8000:4000"
 volumes:
   postgres_data:
