@@ -1,0 +1,33 @@
+version: "3"
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: app_development
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  back:
+    build:
+      context: ./back
+    command: bash -c "tail -f log/development.log"
+    volumes:
+      - ./back:/app
+    ports:
+      - "3002:3002"
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+  front:
+    build:
+      context: ./front
+    volumes:
+      - ./front:/app
+    ports:
+      - "8002:3001"
+volumes:
+  postgres_data:
